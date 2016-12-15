@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Intro to Canvas</title>
+</head>
+
+<body>
+		<canvas width="625" height="800" style="border:solid 1px black" id="myCanvas">
+			<script>
+				var c = document.getElementById("myCanvas");
+				var ctx = c.getContext("2d");
+				var gradient = ctx.createRadialGradient(305,300,150,305,285,30);
+				gradient.addColorStop(0,"#ffd700");
+				gradient.addColorStop(1,"#996515");
+				//Black Circle
+				ctx.beginPath();
+				ctx.arc(305,300,250,0,2*Math.PI);
+				ctx.stroke();
+				ctx.fillStyle="#000";
+				ctx.fill();
+				ctx.closePath();
+				//Gold Band
+				ctx.beginPath();
+				ctx.arc(305,300,225,0,2*Math.PI);
+				ctx.lineWidth=10;
+				ctx.strokeStyle="#ffd700";
+				ctx.stroke();
+				ctx.closePath();
+				//Triangle
+					//Triangle Top
+					ctx.beginPath();
+					ctx.lineCap="round";
+					ctx.moveTo(305,120);
+					ctx.lineTo(340,180);
+					ctx.lineTo(312,180);
+					ctx.lineTo(305,165);
+					ctx.lineTo(298,180);
+					ctx.lineTo(270,180);
+					ctx.lineTo(305,120);
+					ctx.lineWidth=3;
+					ctx.fillStyle="#8b0000";
+					ctx.strokeStyle="#f00";
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					//Triangle Left
+					ctx.beginPath();
+					ctx.lineCap="round";
+					ctx.moveTo(193,310);
+					ctx.lineTo(211,321);
+					ctx.lineTo(166,397);
+					ctx.lineTo(215,397);
+					ctx.lineTo(202,421);
+					ctx.lineTo(125,421);
+					ctx.lineTo(193,310);
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+					//Triangle Right
+					ctx.beginPath();
+					ctx.lineCap="round";
+					ctx.moveTo(417,310);
+					ctx.lineTo(399,321);
+					ctx.lineTo(444,397);
+					ctx.lineTo(395,397);
+					ctx.lineTo(408,421);
+					ctx.lineTo(485,421);
+					ctx.lineTo(417,310);
+					ctx.lineWidth=3;
+					ctx.fill();
+					ctx.stroke();
+					ctx.closePath();
+				//
+				//Eagle
+					//Left Half
+					ctx.beginPath();
+					ctx.lineCap="round";
+					ctx.moveTo(295,187);
+					ctx.lineTo(173,187);
+					ctx.lineTo(148,240);
+					ctx.bezierCurveTo(210,180,210,260,170,238);
+					ctx.lineTo(170,316);
+					ctx.bezierCurveTo(190,240,245,260,199,298);
+					ctx.lineTo(230,317);
+					ctx.bezierCurveTo(250,255,290,292,250,320);
+					ctx.bezierCurveTo(240,305,200,335,228,353);
+					ctx.bezierCurveTo(225,315,265,333,246,346);
+					ctx.bezierCurveTo(255,350,260,345,260,339);
+					ctx.lineTo(265,336);
+					ctx.lineTo(206,440);
+					ctx.bezierCurveTo(236,415,266,410,290,421);
+					ctx.lineTo(305,399);
+					//Right Half
+					ctx.lineTo(320,421);
+					ctx.bezierCurveTo(344,410,374,415,404,440);
+					ctx.lineTo(345,336);
+					ctx.lineTo(350,339);
+					ctx.bezierCurveTo(350,345,355,350,364,346);
+					ctx.bezierCurveTo(345,333,385,315,382,353);
+					ctx.bezierCurveTo(410,335,370,305,360,320);
+					ctx.bezierCurveTo(320,292,360,255,380,317);
+					ctx.lineTo(411,298);
+					ctx.bezierCurveTo(365,260,420,240,440,316);
+					ctx.lineTo(440,238);
+					ctx.bezierCurveTo(400,260,400,180,462,240);
+					ctx.lineTo(437,187);
+					ctx.lineTo(315,187);
+					//Head
+					ctx.bezierCurveTo(415,240,340,275,325,215);
+					ctx.bezierCurveTo(315,200,290,200,285,217);
+					ctx.bezierCurveTo(278,217,272,222,276,230);
+					ctx.bezierCurveTo(278,229,281,227,284,228);
+					ctx.bezierCurveTo(280,260,185,255,295,187);
+					ctx.lineWidth=3;
+					ctx.shadowColor="#f00";
+					ctx.shadowBlur=20;
+					ctx.strokeStyle="#f00";
+					ctx.fillStyle=gradient;
+					ctx.fill();
+					ctx.strokeStyle="#ffe033";
+					ctx.stroke();
+					ctx.closePath();
+				//
+				//Title
+					ctx.beginPath();
+					ctx.rect(65,600,485,150);
+					ctx.fillStyle="#000";
+					ctx.fill();
+					ctx.shadowColor="#fff";
+					ctx.shadowBlur=0;
+					ctx.strokeStyle="#000";
+					ctx.stroke();
+					ctx.closePath();
+					ctx.font = "bold 100px Arial";
+					ctx.fillStyle="#ffd700";
+					ctx.fillText("Terran",150,705);
+			</script>
+	</canvas>
+</body>
+
+</html>
+ 
